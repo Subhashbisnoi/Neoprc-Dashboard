@@ -38,7 +38,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
     const month = payload[0].payload.name;
     return (
       <div className="bg-card border border-border rounded-lg shadow-lg p-3">
-        <p className="text-s text-muted-foreground">{`month: ${month}`}</p>
+        <p className="text-s text-muted-foreground">{`Month: ${month}`}</p>
         <p className="text-sm font-medium text-foreground">{`${cardTitle}: ${percent}`}</p>
         {diffElem && (
           <p className="text-xs mt-1">{diffElem}</p>

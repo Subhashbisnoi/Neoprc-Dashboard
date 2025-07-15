@@ -90,7 +90,7 @@ export const Dashboard = () => {
               cardTitle="Non Standard Query %"
             />
           </DashboardCard>
-          <DashboardCard title="Query Distribution">
+          <DashboardCard title="Query Distribution per Article">
             <DashboardBoxPlot 
               data={boxPlotData.queryDistribution}
               title="Query Distribution"
