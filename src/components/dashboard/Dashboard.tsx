@@ -23,7 +23,7 @@ const editableCards = [
 		initialData: lineChartData.additionalEditsPerArticle,
 		cardTitle: "Additional Edits per Article",
 	},
-	// Add more cards as needed
+	
 ];
 
 export const Dashboard = () => {
