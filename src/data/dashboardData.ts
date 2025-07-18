@@ -109,7 +109,6 @@ export const boxPlotData = {
     max: 48,
     outliers: [52, 3]
   },
-  
   additionalEditsBoxplot: {
     min: 0.5,
     q1: 1.8,
@@ -118,7 +117,6 @@ export const boxPlotData = {
     max: 4.2,
     outliers: [5.1]
   },
-  
   queryDistribution: {
     min: 8,
     q1: 15,
@@ -126,5 +124,22 @@ export const boxPlotData = {
     q3: 28,
     max: 35,
     outliers: [42, 6]
+  },
+  // Added for Time To Resolution boxplots
+  nonCompliance: {
+    min: 10,
+    q1: 18,
+    median: 25,
+    q3: 30,
+    max: 40,
+    outliers: []
+  },
+  support: {
+    min: 10,
+    q1: 18,
+    median: 25,
+    q3: 30,
+    max: 40,
+    outliers: []
   }
 };

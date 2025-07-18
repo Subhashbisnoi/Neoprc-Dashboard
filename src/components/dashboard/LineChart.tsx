@@ -8,6 +8,19 @@ interface LineChartProps {
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     const value = payload[0].value;
+    const cardTitle = payload[0].payload.cardTitle || label;
+    const month = payload[0].payload.name;
+
+    // Special case: Additional Edits per Article (75 Percentile)
+    if (cardTitle === 'Additional Edits per Article (75 Percentile)') {
+      return (
+        <div className="bg-card border border-border rounded-lg shadow-lg p-3">
+          <p className="text-s text-muted-foreground">{`Month: ${month}`}</p>
+          <p className="text-sm font-medium text-foreground">{`${cardTitle}: ${value}`}</p>
+        </div>
+      );
+    }
+
     const percent = `${value}%`;
     // Find previous value for comparison
     const prev = payload[0].payload.prevValue;
@@ -33,9 +46,6 @@ const CustomTooltip = ({ active, payload, label }: any) => {
         );
       }
     }
-    // Get DashboardCard title from payload if available
-    const cardTitle = payload[0].payload.cardTitle || label;
-    const month = payload[0].payload.name;
     return (
       <div className="bg-card border border-border rounded-lg shadow-lg p-3">
         <p className="text-s text-muted-foreground">{`Month: ${month}`}</p>
