@@ -21,7 +21,7 @@ export const ChartForNumber = ({ data, color = "#4682b4", cardTitle }) => {
   const dataWithTitle = data.map((d) => ({ ...d, cardTitle }));
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <LineChart data={dataWithTitle} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
+      <LineChart data={dataWithTitle} margin={{ top: 5, right: 5, left: 5, bottom: 12 }}>
         <XAxis 
           dataKey="name" 
           axisLine={false}

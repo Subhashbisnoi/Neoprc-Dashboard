@@ -8,6 +8,8 @@ import { headingDescriptions } from './headingDescriptions';
 const rows = [
   {
     index: 'Validation Edits Index',
+    chartTitle1: 'Total Edits (75th Percentile)',
+    chartTitle2: 'Edits per Article (75th Percentile)',
     cards: [
       { label: 'Total Articles Edit', value: '78%', change: '+11.01%', positive: true },
       { label: 'Per Article Edits', value: '48', change: '-0.03%', positive: false },
@@ -18,6 +20,8 @@ const rows = [
   },
   {
     index: 'Validation Value Index',
+    chartTitle1: 'Total Value (75th Percentile)',
+    chartTitle2: 'Value per Article (75th Percentile)',
     cards: [
       { label: 'Total Articles', value: '83%', change: '+11.01%', positive: true },
       { label: 'Per Article Edits', value: '28', change: '-0.03%', positive: false },
@@ -28,6 +32,8 @@ const rows = [
   },
   {
     index: 'Validation Additional Action Index',
+    chartTitle1: 'Total Actions (75th Percentile)',
+    chartTitle2: 'Actions per Article (75th Percentile)',
     cards: [
       { label: 'Total Articles', value: '90%', change: '+11.01%', positive: true },
       { label: 'Per Article Edits', value: '20', change: '-0.03%', positive: false },
@@ -38,6 +44,8 @@ const rows = [
   },
   {
     index: 'Incomplete Validation Index',
+    chartTitle1: 'Incomplete Total (75th Percentile)',
+    chartTitle2: 'Incomplete per Article (75th Percentile)',
     cards: [
       { label: 'Total Articles Edit', value: '88%', change: '+11.01%', positive: true },
       { label: 'Per Article Edits', value: '26', change: '-0.03%', positive: false },
@@ -50,8 +58,8 @@ const rows = [
 
 const MC: React.FC = () => {
   return (
-    <div className="bg-white rounded-xl shadow border border-gray-200 p-4 w-full max-w-6xl mx-auto mt-6">
-      <div className="flex flex-row items-center justify-between bg-gray-50 border border-gray-200 rounded-xl px-6 py-4 w-full shadow-sm mb-4">
+    <div className="h-screen flex flex-col w-full max-w-full overflow-x-hidden mx-auto bg-white rounded-xl shadow border border-gray-200 box-border">
+      <div className="flex flex-row items-center justify-between bg-gray-50 border border-gray-200 rounded-xl px-6 py-4 w-full shadow-sm" style={{ flex: '0 0 auto' }}>
         <h1 className="text-2xl font-bold text-black-700 tracking-tight">Validator</h1>
         <div className="flex flex-row gap-4 items-center">
           <select className="rounded bg-white border border-gray-200 px-4 py-2 text-base text-gray-800 font-bold focus:outline-none">
@@ -67,9 +75,9 @@ const MC: React.FC = () => {
       </div>
       <div className="flex flex-col gap-2">
         {rows.map((row, idx) => (
-          <div key={idx} className="grid grid-cols-12 gap-4 items-center border-b last:border-b-0 border-gray-200 py-2 bg-white">
+          <div key={idx} className="grid grid-cols-12 gap-4 items-center border-b last:border-b-0 border-gray-200 py-2 bg-white flex-1 min-h-0 min-w-0">
             {/* Left: Index Name */}
-            <div className="col-span-2 flex flex-col items-start gap-2">
+            <div className="col-span-2 flex flex-col items-start gap-2 h-full min-h-0">
               <div className="text-md font-semibold text-blue-700 whitespace-normal leading-tight">
                 <HeadingTooltip description={headingDescriptions[row.index] || ""}>
                   <span className="flex flex-col items-start cursor-help">
@@ -88,12 +96,12 @@ const MC: React.FC = () => {
               </div>
             </div>
             {/* Middle: Summary Cards and Bar Chart */}
-            <div className="col-span-7 flex flex-row gap-4 items-center h-full">
-              <div className="flex flex-col gap-2">
+            <div className="col-span-7 flex flex-row gap-4 items-center h-full min-h-0">
+              <div className="flex flex-col gap-2 flex-1 overflow-hidden h-full min-h-0">
                 {row.cards.map((card, i) => (
                   <div
                     key={i}
-                    className={`rounded-xl px-3 py-2 shadow border border-gray-100 flex flex-col items-start bg-blue-50 min-w-[120px] ${i === 0 ? 'ring-2 ring-blue-100' : ''}`}
+                    className={`rounded-xl px-3 py-2 shadow border border-gray-100 flex flex-col items-start bg-blue-50 min-w-[120px] flex-1 min-h-0 h-full ${i === 0 ? 'ring-2 ring-blue-100' : ''}` }
                   >
                     <span className="text-[11px] font-medium text-gray-500 mb-0">
                       {i === 0 ? (
@@ -121,9 +129,9 @@ const MC: React.FC = () => {
                 ))}
               </div>
               {/* Bar Chart */}
-              <div className="flex flex-col w-full h-full flex-1">
+              <div className="flex flex-col w-full h-full flex-1 min-h-0">
                 <div className="flex-1 flex flex-col justify-start">
-                  <div className="text-xs font-bold text-blue-700 mb-0">Total Articles (75th Percentile)</div>
+                  <div className="text-xs font-bold text-blue-700 mb-0">{row.chartTitle1}</div>
                   <div className="w-full flex-1">
                     <ChartForMC
                       data={row.chartLabels.map((label, i) => ({ name: label, value: row.chartData[i] / 1000 }))}
@@ -131,7 +139,7 @@ const MC: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex-1 flex flex-col justify-end">
-                  <div className="text-xs font-bold text-blue-700 mb-0"> Per Article(75th Percentile)</div>
+                  <div className="text-xs font-bold text-blue-700 mb-0">{row.chartTitle2}</div>
                   <div className="w-full flex-1">
                     <ChartForMC
                       data={row.chartLabels.map((label, i) => ({ name: label, value: row.chartData[i] / 1000 }))}
@@ -141,8 +149,8 @@ const MC: React.FC = () => {
               </div>
             </div>
             {/* Right: Boxplot */}
-            <div className="col-span-3 flex flex-col items-center">
-              <div className="w-full bg-white rounded-xl shadow border border-gray-100 p-3 flex flex-col items-center">
+            <div className="col-span-3 flex flex-col items-center h-full min-h-0">
+              <div className="w-full bg-white rounded-xl shadow border border-gray-100 p-3 flex flex-col items-center h-full min-h-0">
                 <div className="text-sm font-bold text-blue-700 mb-0">Per Article</div>
                 <DashboardBoxPlot data={row.boxplot} />
               </div>

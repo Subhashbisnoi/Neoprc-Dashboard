@@ -65,7 +65,7 @@ export const DashboardLineChart = ({ data, ...props }: LineChartProps & { cardTi
   const dataWithPrev = data.map((d, i) => ({ ...d, prevValue: i > 0 ? data[i - 1].value : undefined, cardTitle: props.cardTitle }));
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <LineChart data={dataWithPrev} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
+      <LineChart data={dataWithPrev} margin={{ top: 3, right: 5, left: 5, bottom: 12 }}>
         <XAxis 
           dataKey="name" 
           axisLine={false}

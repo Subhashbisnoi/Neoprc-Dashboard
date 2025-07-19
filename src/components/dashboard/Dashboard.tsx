@@ -57,14 +57,16 @@ export const Dashboard = () => {
       {sidebarOpen && (
         <aside className="w-56 bg-gray-100 text-gray-900 flex flex-col py-8 px-4 min-h-screen shadow-lg relative">
           <button
-            className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center rounded-full bg-transparent hover:bg-gray-200 focus:outline-none"
+            className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center rounded-full bg-transparent hover:bg-transparent focus:outline-none"
             onClick={() => setSidebarOpen(false)}
-            title="Close sidebar"
+            title="Hide sidebar"
           >
-            <span className="sr-only">Close sidebar</span>
-            {/* Left Arrow icon */}
-            <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            <span className="sr-only">Hide sidebar</span>
+            {/* Hamburger icon */}
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <line x1="4" y1="7" x2="20" y2="7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <line x1="4" y1="17" x2="20" y2="17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </button>
           <div className="mb-8 flex justify-center">
@@ -106,14 +108,16 @@ export const Dashboard = () => {
       <main className="flex-1 p-3 relative">
         {!sidebarOpen && (
           <button
-            className="absolute top-4 left-4 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-white border border-gray-300 hover:bg-gray-100 text-black focus:outline-none shadow"
+            className="absolute top-4 left-4 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-black-700 hover:bg-black-800 text-black focus:outline-none shadow"
             onClick={() => setSidebarOpen(true)}
-            title="Open sidebar"
+            title="Show sidebar"
           >
-            <span className="sr-only">Open sidebar</span>
-            {/* Right Arrow icon */}
-            <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            <span className="sr-only">Show sidebar</span>
+            {/* Hamburger icon */}
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <line x1="4" y1="7" x2="20" y2="7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <line x1="4" y1="17" x2="20" y2="17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </button>
         )}

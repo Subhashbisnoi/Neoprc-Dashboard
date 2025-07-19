@@ -43,7 +43,7 @@ const DashboardMain = ({ handleCardClick }: { handleCardClick: (key: string) => 
           />
         </DashboardCard>
       </div>
-      <div onClick={() => handleCardClick("updateQueryPerArticle") } className="h-full"> 
+      <div onClick={() => handleCardClick("updateQueryPerArticle") } className="h-full flex flex-col"> 
         <DashboardCard title={<HeadingTooltip description={headingDescriptions["Update Query % per Article (75th Percentile)"] || ""}>Update Query % per Article (75th Percentile)</HeadingTooltip>} className="h-full">
           <DashboardLineChart
             data={[ 
