@@ -35,12 +35,12 @@ export const headingDescriptions: Record<string, string> = {
   "Article With No Queries (75th Percentile)": "% of articles with no queries raised.",
   "Article With Non Standard Query": "% of articles with no standard queries.",
   "Preview Success %": "% of articles with no preview failures.",
-  "Preview Fails per Article (75th Percentile)": "% of articles which has no preview failures.",
+  "Preview Fails per Article (75th Percentile)": "Number of preview failures per article.",
   "Preview Generation Time": "Time taken to generate preview.",
 
   // MC
   "Validation Edits Index": "% of articles with validator edits.",
-  "Validation Value Index": "% of articles where in validator has done edits and also edited by the author.",
+  "Validation Value Index": "% of articles where in validator has edited the author edits.",
   "Validation Additional Action Index": "% of articles with additional actions by validator.",
   "Incomplete Validation Index": "% of articles where validator raised comments.",
 };

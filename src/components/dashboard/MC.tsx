@@ -8,11 +8,12 @@ import { headingDescriptions } from './headingDescriptions';
 const rows = [
   {
     index: 'Validation Edits Index',
-    chartTitle1: 'Total Edits (75th Percentile)',
-    chartTitle2: 'Edits per Article (75th Percentile)',
+    chartTitle1: 'Validation Edits Index (75th Percentile)',
+    chartTitle2: 'Validation Edits Index per Article (75th Percentile)',
+    boxplotTitle: 'Validation Edits Index',
     cards: [
-      { label: 'Total Articles Edit', value: '78%', change: '+11.01%', positive: true },
-      { label: 'Per Article Edits', value: '48', change: '-0.03%', positive: false },
+      { label: 'Validation Edits Index', value: '78%', change: '+11.01%', positive: true },
+      { label: 'Validation Edits Index per Article', value: '48', change: '-0.03%', positive: false },
     ],
     chartData: [12000, 18000, 24000, 20000, 11000, 21000],
     chartLabels: ['JAN', 'FEB', 'MARCH', 'APRIL', 'MAY', 'JUN'],
@@ -20,8 +21,9 @@ const rows = [
   },
   {
     index: 'Validation Value Index',
-    chartTitle1: 'Total Value (75th Percentile)',
-    chartTitle2: 'Value per Article (75th Percentile)',
+    chartTitle1: 'Total Articles (75th Percentile)',
+    chartTitle2: 'Per Article (75th Percentile)',
+    boxplotTitle: 'Validation Value Index',
     cards: [
       { label: 'Total Articles', value: '83%', change: '+11.01%', positive: true },
       { label: 'Per Article Edits', value: '28', change: '-0.03%', positive: false },
@@ -32,11 +34,12 @@ const rows = [
   },
   {
     index: 'Validation Additional Action Index',
-    chartTitle1: 'Total Actions (75th Percentile)',
-    chartTitle2: 'Actions per Article (75th Percentile)',
+    chartTitle1: 'Total Articles (75th Percentile)',
+    chartTitle2: 'Additional Edits per Article (75th Percentile)',
+    boxplotTitle: 'Validation Additional Action Index',
     cards: [
       { label: 'Total Articles', value: '90%', change: '+11.01%', positive: true },
-      { label: 'Per Article Edits', value: '20', change: '-0.03%', positive: false },
+      { label: 'Additional Edits per Article', value: '20', change: '-0.03%', positive: false },
     ],
     chartData: [6000, 12000, 9000, 15000, 13000, 17000],
     chartLabels: ['JAN', 'FEB', 'MARCH', 'APRIL', 'MAY', 'JUN'],
@@ -45,10 +48,11 @@ const rows = [
   {
     index: 'Incomplete Validation Index',
     chartTitle1: 'Incomplete Total (75th Percentile)',
-    chartTitle2: 'Incomplete per Article (75th Percentile)',
+    chartTitle2: 'Incomplete Validation Edits per Article (75th Percentile)',
+    boxplotTitle: 'Incomplete Validation Index',
     cards: [
       { label: 'Total Articles Edit', value: '88%', change: '+11.01%', positive: true },
-      { label: 'Per Article Edits', value: '26', change: '-0.03%', positive: false },
+      { label: 'Incomplete Validation Edits per Article', value: '26', change: '-0.03%', positive: false },
     ],
     chartData: [22000, 6000, 19000, 17000, 18000, 24000],
     chartLabels: ['JAN', 'FEB', 'MARCH', 'APRIL', 'MAY', 'JUN'],
@@ -151,7 +155,7 @@ const MC: React.FC = () => {
             {/* Right: Boxplot */}
             <div className="col-span-3 flex flex-col items-center h-full min-h-0">
               <div className="w-full bg-white rounded-xl shadow border border-gray-100 p-3 flex flex-col items-center h-full min-h-0">
-                <div className="text-sm font-bold text-blue-700 mb-0">Per Article</div>
+                <div className="text-sm font-bold text-blue-700 mb-0">{row.boxplotTitle}</div>
                 <DashboardBoxPlot data={row.boxplot} />
               </div>
             </div>

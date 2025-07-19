@@ -3,6 +3,7 @@ import { DashboardLineChart } from "./LineChart";
 import { DashboardBoxPlot } from "./BoxPlot";
 import HeadingTooltip from "./HeadingTooltip";
 import { headingDescriptions } from "./headingDescriptions";
+import { ChartForNumber } from './Chartfornumber';
 
 const dummyLineData = [
   [
@@ -140,7 +141,7 @@ export const Reports = () => {
                 <span className="text-lg font-semibold text-black mb-2 self-start">
   <HeadingTooltip description={headingDescriptions["Preview Fails per Article (75th Percentile)"] || ""}>{rowTitles[2][1]}</HeadingTooltip>
 </span>
-                <DashboardLineChart data={dummyLineData[2]} cardTitle={rowTitles[2][1]} />
+                <ChartForNumber data={dummyLineData[2]} cardTitle={rowTitles[2][1]} />
               </div>
             </div>
             <div className="h-full">
