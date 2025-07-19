@@ -60,6 +60,7 @@ const rows = [
   },
 ];
 
+// m
 const MC: React.FC = () => {
   return (
     <div className="h-screen flex flex-col w-full max-w-full overflow-x-hidden mx-auto bg-white rounded-xl shadow border border-gray-200 box-border">
