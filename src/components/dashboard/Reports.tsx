@@ -4,6 +4,7 @@ import { DashboardBoxPlot } from "./BoxPlot";
 import HeadingTooltip from "./HeadingTooltip";
 import { headingDescriptions } from "./headingDescriptions";
 import { ChartForNumber } from './Chartfornumber';
+import ChartForConf from './Chartforconf';
 
 const dummyLineData = [
   [
@@ -112,7 +113,7 @@ export const Reports = () => {
                   <span className="text-lg font-medium text-black mb-2 self-start">
   <HeadingTooltip description={headingDescriptions[rowTitles[1][0]] || ""}>{rowTitles[1][0]}</HeadingTooltip>
 </span>
-                  <DashboardLineChart data={dummyLineData[3]} cardTitle={rowTitles[1][0]} />
+                  <ChartForConf data={dummyLineData[3]} cardTitle={rowTitles[1][0]} color="#4682b4" />
                 </div>
                 {/* Divider */}
                 <div className="my-1 w-full border-t border-gray-200"></div>
@@ -121,7 +122,7 @@ export const Reports = () => {
                   <span className="text-lg font-medium text-black mb-2 self-start">
   <HeadingTooltip description={headingDescriptions["Rejetion"] || ""}>{rowTitles[3][0]}</HeadingTooltip>
 </span>
-                  <DashboardLineChart data={dummyLineData[4]} cardTitle={rowTitles[0][0]} />
+                  <ChartForConf data={dummyLineData[4]} cardTitle={rowTitles[3][0]} color="#e57373" />
                 </div>
               </div>
             </div>
