@@ -259,9 +259,9 @@ const Proof: React.FC = () => {
     </select>
   </div>
 </div>
-<div className="grid grid-cols-1 md:grid-cols-2 flex-1 w-full h-full gap-0 overflow-hidden">
+<div className="grid grid-cols-1 md:grid-cols-2 flex-1 w-full h-full gap-1 overflow-hidden">
         {/* Left Side */}
-        <div className="flex flex-col h-full w-full border-r border-gray-200 overflow-hidden">
+        <div className="flex flex-col h-full w-full border-gray-200 overflow-hidden px-1">
           <h2 className="text-2xl font-bold mb-2 text-black">Proof Readiness</h2>
         {/* Summary Cards */}
         <div className="flex flex-row gap-3 mb-2 flex-shrink-0">
@@ -271,8 +271,8 @@ const Proof: React.FC = () => {
               className="flex-1 rounded-2xl px-8 py-6 shadow-lg border border-blue-100 flex flex-col items-start bg-blue-50"
             >
               <span className="text-sm font-medium text-black mb-1">{card.label}</span>
-              <span className="text-3xl font-extrabold text-blue-900 mb-1">{card.value}</span>
-              <span className={`text-sm font-semibold flex items-center ${card.positive ? 'text-green-600' : 'text-gray-500'}`}>{card.change} <span className="ml-1">{card.positive ? '↗' : '↘'}</span></span>
+              <span className="text-3xl font-medium text-blue-900 mb-1">{card.value}</span>
+              <span className={`text-sm font-medium flex items-center ${card.positive ? 'text-green-600' : 'text-gray-500'}`}>{card.change} <span className="ml-1">{card.positive ? '↗' : '↘'}</span></span>
             </div>
           ))}
         </div>
@@ -280,7 +280,7 @@ const Proof: React.FC = () => {
         <div className="grid grid-cols-2 grid-rows-2 gap-3 flex-1 min-h-0 h-full">
           {/* Proof Readiness Rate */}
           <div className="rounded-2xl border border-blue-100 p-2 bg-blue-50 shadow-md flex flex-col h-full min-h-0 flex-1">
-            <span className="block text-base font-bold text-black mb-2">
+            <span className="block text-lg font-medium text-black mb-2">
   <HeadingTooltip description={headingDescriptions["Proof Readiness Rate"] || ""}>Proof Readiness Rate</HeadingTooltip>
 </span>
             <div className="flex-1 flex min-h-0 h-full">
@@ -298,7 +298,7 @@ const Proof: React.FC = () => {
           </div>
           {/* Proof Readiness Time (Boxplot, SVG, matches screenshot) */}
           <div className="rounded-2xl border border-blue-100 p-2 bg-blue-50 shadow-md flex flex-col h-full min-h-0 flex-1">
-            <span className="block text-base font-bold text-black mb-2">
+            <span className="block text-lg font-medium text-black">
   <HeadingTooltip description={headingDescriptions["Proof Readiness Time"] || ""}>Proof Readiness Time</HeadingTooltip>
 </span>
             <DashboardBoxPlot
@@ -307,7 +307,7 @@ const Proof: React.FC = () => {
           </div>
           {/* Non-Compliance Rate */}
           <div className="rounded-2xl border border-blue-100 p-2 bg-blue-50 shadow-md flex flex-col h-full min-h-0 flex-1">
-            <span className="block text-base font-bold text-black mb-2">
+            <span className="block text-lg font-medium text-black mb-2">
   <HeadingTooltip description={headingDescriptions["Non-proof Readiness"] || ""}>Non-Readiness</HeadingTooltip>
 </span>
             {/* Legend */}
@@ -342,7 +342,7 @@ const Proof: React.FC = () => {
           </div>
           {/* Time To Resolution (Boxplot) */}
           <div className="rounded-2xl border border-blue-100 p-2 bg-blue-50 shadow-md flex flex-col h-full min-h-0 flex-1">
-            <span className="block text-lg font-bold text-black mb-2">
+            <span className="block text-lg font-medium text-black mb-2">
   <HeadingTooltip description={headingDescriptions["TTR"] || ""}>Time To Resolution</HeadingTooltip>
 </span>
             {/* Legend */}
@@ -358,7 +358,7 @@ const Proof: React.FC = () => {
         </div>
       </div>
       {/* Right Side */}
-      <div className="flex flex-col h-full w-full border-r border-gray-200 overflow-hidden">
+      <div className="flex flex-col h-full w-full border-r border-gray-200 overflow-hidden px-1">
         <h2 className="text-2xl font-bold mb-2 text-black">Proofing Time</h2>
         {/* Chart Grid */}
         <div className="grid grid-cols-2 grid-rows-3 gap-3 flex-1 min-h-0 h-full">
@@ -366,7 +366,7 @@ const Proof: React.FC = () => {
                     {/* Left column: line charts, Right column: histograms */}
                     {/* Turn Around Time (Line) */}
                     <div className="rounded-2xl border border-blue-100 p-2 bg-blue-50 shadow-md flex flex-col h-full min-h-0 flex-1">
-                        <span className="block text-lg font-bold text-black mb-2"><HeadingTooltip description={headingDescriptions["TAT"] || ""}>Turn Around Time</HeadingTooltip></span>
+                        <span className="block text-lg font-medium text-black mb-2"><HeadingTooltip description={headingDescriptions["TAT"] || ""}>Turn Around Time</HeadingTooltip></span>
                         <div className="flex-1 flex min-h-0 h-full">
                             <CustomLineChart
                                 data={[
@@ -382,7 +382,7 @@ const Proof: React.FC = () => {
                     </div>
                     {/* TAT Per Article (Histogram) */}
                     <div className="rounded-2xl border border-blue-100 p-2 bg-blue-50 shadow-md flex flex-col h-full min-h-0 flex-1">
-  <span className="block text-[17px] font-bold text-black mb-2 p2"><HeadingTooltip description={headingDescriptions["TAT Per Article"] || ""}>TAT Per Article</HeadingTooltip></span>
+  <span className="block text-lg font-medium text-black mb-2 p2"><HeadingTooltip description={headingDescriptions["TAT Per Article"] || ""}>TAT Per Article</HeadingTooltip></span>
   <div className="flex-1 flex min-h-0 h-full">
     <HistogramChart
       data={[60, 65, 55, 80]}
@@ -394,7 +394,7 @@ const Proof: React.FC = () => {
 </div>
                     {/* Proofing Time (Line) */}
                     <div className="rounded-2xl border border-blue-100 p-2 bg-blue-50 shadow-md flex flex-col h-full min-h-0 flex-1">
-                        <span className="block text-lg font-bold text-black mb-2"><HeadingTooltip description={headingDescriptions["Proofing Time"] || ""}>Proofing Time</HeadingTooltip></span>
+                        <span className="block text-lg font-medium text-black mb-2"><HeadingTooltip description={headingDescriptions["Proofing Time"] || ""}>Proofing Time</HeadingTooltip></span>
                         <div className="flex-1 flex min-h-0 h-full">
                             <CustomLineChart
                                 data={[
@@ -410,7 +410,7 @@ const Proof: React.FC = () => {
                     </div>
                     {/* TT Per Article (Histogram) */}
                     <div className="rounded-2xl border border-blue-100 p-2 bg-blue-50 shadow-md flex flex-col h-full min-h-0 flex-1">
-  <span className="block text-[17px] font-bold text-black mb-0"><HeadingTooltip description={headingDescriptions["Proofing Time Per Article"] || ""}>Proofing Time Per Article</HeadingTooltip></span>
+  <span className="block text-lg font-medium text-black mb-0"><HeadingTooltip description={headingDescriptions["Proofing Time Per Article"] || ""}>Proofing Time Per Article</HeadingTooltip></span>
   <div className="flex-1 flex min-h-0 h-full">
     <HistogramChart
       data={[60, 65, 55, 80]}
@@ -422,7 +422,7 @@ const Proof: React.FC = () => {
 </div>
                     {/* Validation Time (Line) */}
                     <div className="rounded-2xl border border-blue-100 p-2 bg-blue-50 shadow-md flex flex-col h-full min-h-0 flex-1">
-                        <span className="block text-lg font-bold text-black mb-2"><HeadingTooltip description={headingDescriptions["Validation Time"] || ""}>Validation Time</HeadingTooltip></span>
+                        <span className="block text-lg font-medium text-black mb-2"><HeadingTooltip description={headingDescriptions["Validation Time"] || ""}>Validation Time</HeadingTooltip></span>
                         <div className="flex-1 flex min-h-0 h-full">
                             <CustomLineChart
                                 data={[
@@ -438,7 +438,7 @@ const Proof: React.FC = () => {
                     </div>
                     {/* Validation Time per Article (Histogram) */}
                     <div className="rounded-2xl border border-blue-100 p-2 bg-blue-50 shadow-md flex flex-col h-full min-h-0 flex-1">
-  <span className="block text-[17px] font-bold text-black mb-2"><HeadingTooltip description={headingDescriptions["Validation Time per Article"] || ""}>Validation Time per Article</HeadingTooltip></span>
+  <span className="block text-lg font-medium text-black mb-2"><HeadingTooltip description={headingDescriptions["Validation Time per Article"] || ""}>Validation Time per Article</HeadingTooltip></span>
   <div className="flex-1 flex min-h-0 h-full">
     <HistogramChart
       data={[60, 65, 55, 80]}

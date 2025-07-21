@@ -26,6 +26,20 @@ const dummyLineData = [
     { name: "Mar", value: 22 },
     { name: "Apr", value: 20 },
     { name: "May", value: 25 },
+  ],
+  [
+    { name: "Jan", value: 20 },
+    { name: "Feb", value: 45 },
+    { name: "Mar", value: 10 },
+    { name: "Apr", value: 65 },
+    { name: "May", value: 95 },
+  ],
+  [
+    { name: "Jan", value: 80 },
+    { name: "Feb", value: 55 },
+    { name: "Mar", value: 90 },
+    { name: "Apr", value: 35 },
+    { name: "May", value: 5 },
   ]
 ];
 
@@ -36,10 +50,10 @@ const dummyBoxPlotData = [
 ];
 
 const rowTitles = [
-  ["CE Rejetion Rate", "CE Rejection per Article(75th Percentile)", "CE Rejection per Article"],
-  ["Author Confirmation Rate", "Article With No Queries(75th Percentile)", "Article With Non Standard Query"],
+  ["CE Rejection Rate", "CE Rejection per Article(75th Percentile)", "CE Rejection per Article"],
+  ["Author Confirmation Rate", "Articles With No Queries(75th Percentile)", "Articles With Non Standard Query"],
   ["Preview Success %", "Preview Fails per Article(75th Percentile)", "Preview Generation Time"],
-  ["Rejetion","Rejetion","Rejetion"]
+  ["Rejection","Rejection","Rejection"]
 ];
 
 export const Reports = () => {
@@ -68,7 +82,7 @@ export const Reports = () => {
             {/* Row 1 */}
             <div className="h-full">
               <div className="rounded-lg bg-muted h-full flex flex-col items-center justify-center shadow p-2">
-                <span className="text-lg font-semibold text-black mb-2 self-start">
+                <span className="text-lg font-medium text-black mb-2 self-start">
   <HeadingTooltip description={headingDescriptions["CE Rejection Rate"] || ""}>{rowTitles[0][0]}</HeadingTooltip>
 </span>
                 <DashboardLineChart data={dummyLineData[0]} cardTitle={rowTitles[0][0]} />
@@ -76,7 +90,7 @@ export const Reports = () => {
             </div>
             <div className="h-full">
               <div className="rounded-lg bg-muted h-full flex flex-col items-center justify-center shadow p-2">
-                <span className="text-lg font-semibold text-black mb-2 self-start">
+                <span className="text-lg font-medium text-black mb-2 self-start">
   <HeadingTooltip description={headingDescriptions["CE Rejection per Article (75th Percentile)"] || ""}>{rowTitles[0][1]}</HeadingTooltip>
 </span>
                 <DashboardLineChart data={dummyLineData[1]} cardTitle={rowTitles[0][1]} />
@@ -84,7 +98,7 @@ export const Reports = () => {
             </div>
             <div className="h-full">
               <div className="rounded-lg bg-muted h-full flex flex-col items-center justify-center shadow p-2">
-                <span className="text-lg font-semibold text-black mb-2 self-start">
+                <span className="text-lg font-medium text-black mb-2 self-start">
   <HeadingTooltip description={headingDescriptions[rowTitles[0][2]] || ""}>{rowTitles[0][2]}</HeadingTooltip>
 </span>
                 <DashboardBoxPlot data={dummyBoxPlotData[0]} title={rowTitles[0][2]} />
@@ -95,25 +109,25 @@ export const Reports = () => {
               <div className="rounded-lg bg-muted h-full flex flex-col shadow p-2 justify-between" style={{height: '100%'}}>
                 {/* Top: Author Confirmation Rate */}
                 <div className="flex-1 flex flex-col items-center justify-center min-h-0" style={{height: '50%'}}>
-                  <span className="text-lg font-semibold text-black mb-2 self-start">
+                  <span className="text-lg font-medium text-black mb-2 self-start">
   <HeadingTooltip description={headingDescriptions[rowTitles[1][0]] || ""}>{rowTitles[1][0]}</HeadingTooltip>
 </span>
-                  <DashboardLineChart data={dummyLineData[2]} cardTitle={rowTitles[1][0]} />
+                  <DashboardLineChart data={dummyLineData[3]} cardTitle={rowTitles[1][0]} />
                 </div>
                 {/* Divider */}
                 <div className="my-1 w-full border-t border-gray-200"></div>
                 {/* Bottom: CE Rejection Rate */}
                 <div className="flex-1 flex flex-col items-center justify-center min-h-0" style={{height: '50%'}}>
-                  <span className="text-lg font-semibold text-black mb-2 self-start">
+                  <span className="text-lg font-medium text-black mb-2 self-start">
   <HeadingTooltip description={headingDescriptions["Rejetion"] || ""}>{rowTitles[3][0]}</HeadingTooltip>
 </span>
-                  <DashboardLineChart data={dummyLineData[0]} cardTitle={rowTitles[0][0]} />
+                  <DashboardLineChart data={dummyLineData[4]} cardTitle={rowTitles[0][0]} />
                 </div>
               </div>
             </div>
             <div className="h-full">
               <div className="rounded-lg bg-muted h-full flex flex-col items-center justify-center shadow p-2">
-                <span className="text-lg font-semibold text-black mb-2 self-start">
+                <span className="text-lg font-medium text-black mb-2 self-start">
   <HeadingTooltip description={headingDescriptions["Article With No Queries (75th Percentile)"] || ""}>{rowTitles[1][1]}</HeadingTooltip>
 </span>
                 <DashboardLineChart data={dummyLineData[0]} cardTitle={rowTitles[1][1]} />
@@ -121,7 +135,7 @@ export const Reports = () => {
             </div>
             <div className="h-full">
               <div className="rounded-lg bg-muted h-full flex flex-col items-center justify-center shadow p-2">
-                <span className="text-lg font-semibold text-black mb-2 self-start">
+                <span className="text-lg font-medium text-black mb-2 self-start">
   <HeadingTooltip description={headingDescriptions[rowTitles[1][2]] || ""}>{rowTitles[1][2]}</HeadingTooltip>
 </span>
                 <DashboardLineChart data={dummyLineData[0]} cardTitle={rowTitles[1][2]} />
@@ -130,7 +144,7 @@ export const Reports = () => {
             {/* Row 3 */}
             <div className="h-full">
               <div className="rounded-lg bg-muted h-full flex flex-col items-center justify-center shadow p-2">
-                <span className="text-lg font-semibold text-black mb-2 self-start">
+                <span className="text-lg font-medium text-black mb-2 self-start">
   <HeadingTooltip description={headingDescriptions[rowTitles[2][0]] || ""}>{rowTitles[2][0]}</HeadingTooltip>
 </span>
                 <DashboardLineChart data={dummyLineData[1]} cardTitle={rowTitles[2][0]} />
@@ -138,7 +152,7 @@ export const Reports = () => {
             </div>
             <div className="h-full">
               <div className="rounded-lg bg-muted h-full flex flex-col items-center justify-center shadow p-2">
-                <span className="text-lg font-semibold text-black mb-2 self-start">
+                <span className="text-lg font-medium text-black mb-2 self-start">
   <HeadingTooltip description={headingDescriptions["Preview Fails per Article (75th Percentile)"] || ""}>{rowTitles[2][1]}</HeadingTooltip>
 </span>
                 <ChartForNumber data={dummyLineData[2]} cardTitle={rowTitles[2][1]} />
@@ -146,7 +160,7 @@ export const Reports = () => {
             </div>
             <div className="h-full">
               <div className="rounded-lg bg-muted h-full flex flex-col items-center justify-center shadow p-2">
-                <span className="text-lg font-semibold text-black mb-2 self-start">
+                <span className="text-lg font-medium text-black mb-2 self-start">
   <HeadingTooltip description={headingDescriptions[rowTitles[2][2]] || ""}>{rowTitles[2][2]}</HeadingTooltip>
 </span>
                 <DashboardBoxPlot data={dummyBoxPlotData[2]} title={rowTitles[2][2]} />

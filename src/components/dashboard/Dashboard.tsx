@@ -55,7 +55,7 @@ export const Dashboard = () => {
     <div className="h-screen bg-background flex">
       {/* Sidebar */}
       {sidebarOpen && (
-        <aside className="w-56 bg-gray-100 text-gray-900 flex flex-col py-8 px-4 min-h-screen shadow-lg relative">
+        <aside className="w-56 bg-gray-100 text-gray-900 flex flex-col py-8 px-4 shadow-lg relative" style={{ height: '101.5vh' }}>
           <button
             className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center rounded-full bg-transparent hover:bg-transparent focus:outline-none"
             onClick={() => setSidebarOpen(false)}
@@ -69,7 +69,7 @@ export const Dashboard = () => {
               <line x1="4" y1="17" x2="20" y2="17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </button>
-          <div className="mb-8 flex justify-center">
+          <div className="mb-8 flex">
             <img src={logo} alt="Neoprc Logo" style={{ height: 40 }} />
           </div>
           <nav className="flex-1">
@@ -101,7 +101,7 @@ export const Dashboard = () => {
               
             </ul>
           </nav>
-          <div className="mt-8 text-xs text-black-400 text-center">© 2025 Neoprc</div>
+          <div className="mt-8 text-xs text-black-400 text-center">© Proof Central 4.0</div>
         </aside>
       )}
       {/* Main Content */}
