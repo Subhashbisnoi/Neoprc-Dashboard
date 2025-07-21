@@ -28,17 +28,17 @@ const dummyLineData = [
     { name: "May", value: 25 },
   ],
   [
-    { name: "Jan", value: 20 },
-    { name: "Feb", value: 45 },
+    { name: "Jan", value: 5 },
+    { name: "Feb", value: 65 },
     { name: "Mar", value: 10 },
-    { name: "Apr", value: 65 },
+    { name: "Apr", value: 25 },
     { name: "May", value: 95 },
   ],
   [
-    { name: "Jan", value: 80 },
-    { name: "Feb", value: 55 },
-    { name: "Mar", value: 90 },
-    { name: "Apr", value: 35 },
+    { name: "Jan", value: 98 },
+    { name: "Feb", value: 10 },
+    { name: "Mar", value: 75 },
+    { name: "Apr", value: 98 },
     { name: "May", value: 5 },
   ]
 ];
