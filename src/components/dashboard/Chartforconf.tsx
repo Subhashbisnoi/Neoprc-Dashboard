@@ -55,8 +55,8 @@ const ChartForConf: React.FC<ChartForConfProps> = ({ data, color = '#4682b4', ca
   return (
     <div style={{ width: '100%', height: '100%' }}>
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={dataWithPrev} margin={{ top: 5, right: 24, left: 24, bottom: 5 }}>
-              <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#888' }} interval={0} />
+        <LineChart data={dataWithPrev} margin={{ top: 5, right: 10, left: 10, bottom: 0 }}>
+              <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#888' }} interval={0} padding={{ left: 0, right: 0 }} tickMargin={0} height={18} />
               <YAxis hide={true} />
               <Tooltip content={<CustomTooltip />} />
               <Line type="linear" dataKey="value" stroke="#4682b4" strokeWidth={2} dot={{ r: 4, fill: '#4682b4', stroke: '#fff', strokeWidth: 1 }} />
